@@ -1,0 +1,21 @@
+{
+    "log":{
+        "log_level": "DEBUG",
+        "log_filename": "test_rpc_server",
+        "log_filepath": "../log/",
+        "log_max_filesize": 1000000000,
+        "log_sync_interval": 500
+    },
+    "server":{
+        "port": 12345,
+        "io_threads": 4
+    },
+    "stubs":{
+        "rpc_server":{
+            "name": "default",
+            "ip": "0.0.0.0",
+            "port":"12345",
+            "timeout": "1000"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/text_log.dir/test/test_log.cc.o CMakeFiles/text_log.dir/rocket/common/log.cc.o  -o text_log -lpthread -ljsoncpp 
