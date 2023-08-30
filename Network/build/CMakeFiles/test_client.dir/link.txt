@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_client.dir/test/test_client.cpp.o CMakeFiles/test_client.dir/00_client.cc.o  -o test_client 

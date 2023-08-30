@@ -1,0 +1,5 @@
+/home/hqh/Desktop/C++Proj/MYGit/Network/build/CMakeFiles/rebuild_cache.dir
+/home/hqh/Desktop/C++Proj/MYGit/Network/build/CMakeFiles/edit_cache.dir
+/home/hqh/Desktop/C++Proj/MYGit/Network/build/CMakeFiles/test_nonblock_io.dir
+/home/hqh/Desktop/C++Proj/MYGit/Network/build/CMakeFiles/test_client.dir
+/home/hqh/Desktop/C++Proj/MYGit/Network/build/CMakeFiles/test_block_io.dir

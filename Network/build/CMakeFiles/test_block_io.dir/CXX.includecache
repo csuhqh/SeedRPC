@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hqh/Desktop/C++Proj/MYGit/Network/01_bio.cc
+stdio.h
+-
+iostream
+-
+cstring
+-
+stdlib.h
+-
+sys/fcntl.h
+-
+sys/socket.h
+-
+unistd.h
+-
+netinet/in.h
+-
+errno.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+
+/home/hqh/Desktop/C++Proj/MYGit/Network/test/test_block_io.cpp
+

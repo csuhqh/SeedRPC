@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hqh/Desktop/C++Proj/MYGit/Network/00_client.cc
+stdio.h
+-
+string.h
+-
+unistd.h
+-
+stdlib.h
+-
+netdb.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+string
+-
+iostream
+-
+
+/home/hqh/Desktop/C++Proj/MYGit/Network/test/test_client.cpp
+
