@@ -1,5 +1,5 @@
 ## 整体说明
-主目录下每个文件夹都是一个单独的项目，都可以单独运行。
+所有代码在Ubuntu18上远程开发，主目录下每个文件夹都是一个单独的项目，都可以单独运行。
 - build：项目构建目录。
 - mylibs: 项目依赖的库（已经编译），方便复现
 - test：用于测试项目的源码文件。命名text_xx.cc。
@@ -18,6 +18,8 @@ make  //编译
 https://github.com/Gooddbird/rocket
 
 
+## 项目: 不同网络通信(BIO/NIO/EPOLL等)
+比较和实现不同的socket通信，阻塞IO/非阻塞IO/IO多路复用(epoll, select)
 
 
 ## 项目: MyThreadPool
