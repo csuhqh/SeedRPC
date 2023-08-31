@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_block_io
+
+# Build rule for target.
+test_block_io: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_block_io
+.PHONY : test_block_io
+
+# fast build rule for target.
+test_block_io/fast:
+	$(MAKE) -f CMakeFiles/test_block_io.dir/build.make CMakeFiles/test_block_io.dir/build
+.PHONY : test_block_io/fast
+
+#=============================================================================
+# Target rules for targets named test_epoll
+
+# Build rule for target.
+test_epoll: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_epoll
+.PHONY : test_epoll
+
+# fast build rule for target.
+test_epoll/fast:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/build
+.PHONY : test_epoll/fast
+
+#=============================================================================
 # Target rules for targets named test_nonblock_io
 
 # Build rule for target.
@@ -137,17 +163,17 @@ test_client/fast:
 .PHONY : test_client/fast
 
 #=============================================================================
-# Target rules for targets named test_block_io
+# Target rules for targets named test_select
 
 # Build rule for target.
-test_block_io: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_block_io
-.PHONY : test_block_io
+test_select: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_select
+.PHONY : test_select
 
 # fast build rule for target.
-test_block_io/fast:
-	$(MAKE) -f CMakeFiles/test_block_io.dir/build.make CMakeFiles/test_block_io.dir/build
-.PHONY : test_block_io/fast
+test_select/fast:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/build
+.PHONY : test_select/fast
 
 00_client.o: 00_client.cc.o
 
@@ -230,6 +256,60 @@ test_block_io/fast:
 	$(MAKE) -f CMakeFiles/test_nonblock_io.dir/build.make CMakeFiles/test_nonblock_io.dir/02_nonbio.cc.s
 .PHONY : 02_nonbio.cc.s
 
+03_select.o: 03_select.cc.o
+
+.PHONY : 03_select.o
+
+# target to build an object file
+03_select.cc.o:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/03_select.cc.o
+.PHONY : 03_select.cc.o
+
+03_select.i: 03_select.cc.i
+
+.PHONY : 03_select.i
+
+# target to preprocess a source file
+03_select.cc.i:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/03_select.cc.i
+.PHONY : 03_select.cc.i
+
+03_select.s: 03_select.cc.s
+
+.PHONY : 03_select.s
+
+# target to generate assembly for a file
+03_select.cc.s:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/03_select.cc.s
+.PHONY : 03_select.cc.s
+
+04_epoll.o: 04_epoll.cc.o
+
+.PHONY : 04_epoll.o
+
+# target to build an object file
+04_epoll.cc.o:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/04_epoll.cc.o
+.PHONY : 04_epoll.cc.o
+
+04_epoll.i: 04_epoll.cc.i
+
+.PHONY : 04_epoll.i
+
+# target to preprocess a source file
+04_epoll.cc.i:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/04_epoll.cc.i
+.PHONY : 04_epoll.cc.i
+
+04_epoll.s: 04_epoll.cc.s
+
+.PHONY : 04_epoll.s
+
+# target to generate assembly for a file
+04_epoll.cc.s:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/04_epoll.cc.s
+.PHONY : 04_epoll.cc.s
+
 test/test_block_io.o: test/test_block_io.cpp.o
 
 .PHONY : test/test_block_io.o
@@ -284,6 +364,60 @@ test/test_client.cpp.s:
 	$(MAKE) -f CMakeFiles/test_client.dir/build.make CMakeFiles/test_client.dir/test/test_client.cpp.s
 .PHONY : test/test_client.cpp.s
 
+test/test_multiplexing_epoll.o: test/test_multiplexing_epoll.cpp.o
+
+.PHONY : test/test_multiplexing_epoll.o
+
+# target to build an object file
+test/test_multiplexing_epoll.cpp.o:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/test/test_multiplexing_epoll.cpp.o
+.PHONY : test/test_multiplexing_epoll.cpp.o
+
+test/test_multiplexing_epoll.i: test/test_multiplexing_epoll.cpp.i
+
+.PHONY : test/test_multiplexing_epoll.i
+
+# target to preprocess a source file
+test/test_multiplexing_epoll.cpp.i:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/test/test_multiplexing_epoll.cpp.i
+.PHONY : test/test_multiplexing_epoll.cpp.i
+
+test/test_multiplexing_epoll.s: test/test_multiplexing_epoll.cpp.s
+
+.PHONY : test/test_multiplexing_epoll.s
+
+# target to generate assembly for a file
+test/test_multiplexing_epoll.cpp.s:
+	$(MAKE) -f CMakeFiles/test_epoll.dir/build.make CMakeFiles/test_epoll.dir/test/test_multiplexing_epoll.cpp.s
+.PHONY : test/test_multiplexing_epoll.cpp.s
+
+test/test_multiplexing_select.o: test/test_multiplexing_select.cpp.o
+
+.PHONY : test/test_multiplexing_select.o
+
+# target to build an object file
+test/test_multiplexing_select.cpp.o:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/test/test_multiplexing_select.cpp.o
+.PHONY : test/test_multiplexing_select.cpp.o
+
+test/test_multiplexing_select.i: test/test_multiplexing_select.cpp.i
+
+.PHONY : test/test_multiplexing_select.i
+
+# target to preprocess a source file
+test/test_multiplexing_select.cpp.i:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/test/test_multiplexing_select.cpp.i
+.PHONY : test/test_multiplexing_select.cpp.i
+
+test/test_multiplexing_select.s: test/test_multiplexing_select.cpp.s
+
+.PHONY : test/test_multiplexing_select.s
+
+# target to generate assembly for a file
+test/test_multiplexing_select.cpp.s:
+	$(MAKE) -f CMakeFiles/test_select.dir/build.make CMakeFiles/test_select.dir/test/test_multiplexing_select.cpp.s
+.PHONY : test/test_multiplexing_select.cpp.s
+
 test/test_nonblock_io.o: test/test_nonblock_io.cpp.o
 
 .PHONY : test/test_nonblock_io.o
@@ -318,10 +452,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test_nonblock_io"
-	@echo "... test_client"
 	@echo "... test_block_io"
+	@echo "... test_epoll"
+	@echo "... test_nonblock_io"
+	@echo "... edit_cache"
+	@echo "... test_client"
+	@echo "... test_select"
 	@echo "... 00_client.o"
 	@echo "... 00_client.i"
 	@echo "... 00_client.s"
@@ -331,12 +467,24 @@ help:
 	@echo "... 02_nonbio.o"
 	@echo "... 02_nonbio.i"
 	@echo "... 02_nonbio.s"
+	@echo "... 03_select.o"
+	@echo "... 03_select.i"
+	@echo "... 03_select.s"
+	@echo "... 04_epoll.o"
+	@echo "... 04_epoll.i"
+	@echo "... 04_epoll.s"
 	@echo "... test/test_block_io.o"
 	@echo "... test/test_block_io.i"
 	@echo "... test/test_block_io.s"
 	@echo "... test/test_client.o"
 	@echo "... test/test_client.i"
 	@echo "... test/test_client.s"
+	@echo "... test/test_multiplexing_epoll.o"
+	@echo "... test/test_multiplexing_epoll.i"
+	@echo "... test/test_multiplexing_epoll.s"
+	@echo "... test/test_multiplexing_select.o"
+	@echo "... test/test_multiplexing_select.i"
+	@echo "... test/test_multiplexing_select.s"
 	@echo "... test/test_nonblock_io.o"
 	@echo "... test/test_nonblock_io.i"
 	@echo "... test/test_nonblock_io.s"

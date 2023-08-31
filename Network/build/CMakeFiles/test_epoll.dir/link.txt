@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_epoll.dir/test/test_multiplexing_epoll.cpp.o CMakeFiles/test_epoll.dir/04_epoll.cc.o  -o test_epoll 

@@ -36,7 +36,7 @@ int main(int argc,char *argv[])
     std::vector<int> disconns; //存放断开连接的
     std::vector<int> errorconns; //存放发送错误的连接
     if(argc != 2){
-        printf("block_io_serve start error!, Usage error\n for example: ./test_block_io 12345\n");
+        printf("block_io_server start error!, Usage error\n for example: ./test_block_io 12345\n");
         exit(0);
     }
     //1. 创建socket()

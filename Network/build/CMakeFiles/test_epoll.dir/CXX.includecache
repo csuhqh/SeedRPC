@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hqh/Desktop/C++Proj/MYGit/Network/04_epoll.cc
+stdio.h
+-
+arpa/inet.h
+-
+sys/epoll.h
+-
+unistd.h
+-
+ctype.h
+-
+iostream
+-
+
+/home/hqh/Desktop/C++Proj/MYGit/Network/test/test_multiplexing_epoll.cpp
+
