@@ -27,23 +27,33 @@ std::string formatString(const char* str, Args&&... args) {
 
     //__VA_ARGS__表示可变参数
 #define DEBUGLOG(str, ...) \
-    std::string msg = ((new rocket::LogEvent(rocket::LogLevel::DEBUG))->toString());\
-    msg += rocket::formatString(str, ##__VA_ARGS__); \
-    (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+    (rocket::Logger::getGlobalLogger())->pushLog((new rocket::LogEvent(rocket::LogLevel::DEBUG))->toString() + rocket::formatString(str, ##__VA_ARGS__));\
     (rocket::Logger::getGlobalLogger())->log();
 
-#define INFOLOG(str, ...) std::string msg = ((new rocket::LogEvent(rocket::LogLevel::INFO))->toString());\
-    msg += rocket::formatString(str, ##__VA_ARGS__); \
-    (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+#define INFOLOG(str, ...) \
+    (rocket::Logger::getGlobalLogger())->pushLog((new rocket::LogEvent(rocket::LogLevel::INFO))->toString() + rocket::formatString(str, ##__VA_ARGS__));\
     (rocket::Logger::getGlobalLogger())->log();
-#define ERRORLOG(str, ...) std::string msg = ((new rocket::LogEvent(rocket::LogLevel::ERROR))->toString());\
-    msg += rocket::formatString(str, ##__VA_ARGS__); \
-    (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+
+#define WARNLOG(str, ...) \
+    (rocket::Logger::getGlobalLogger())->pushLog((new rocket::LogEvent(rocket::LogLevel::WARN))->toString() + rocket::formatString(str, ##__VA_ARGS__));\
     (rocket::Logger::getGlobalLogger())->log();
-#define WARNLOG(str, ...) std::string msg = ((new rocket::LogEvent(rocket::LogLevel::WARN))->toString());\
-    msg += rocket::formatString(str, ##__VA_ARGS__); \
-    (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+
+#define ERRORLOG(str, ...) \
+    (rocket::Logger::getGlobalLogger())->pushLog((new rocket::LogEvent(rocket::LogLevel::ERROR))->toString() + rocket::formatString(str, ##__VA_ARGS__));\
     (rocket::Logger::getGlobalLogger())->log();
+
+// #define INFOLOG(str, ...) std::string msg = ((new rocket::LogEvent(rocket::LogLevel::INFO))->toString());\
+//     msg += rocket::formatString(str, ##__VA_ARGS__); \
+//     (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+//     (rocket::Logger::getGlobalLogger())->log();
+// #define ERRORLOG(str, ...) std::string msg = ((new rocket::LogEvent(rocket::LogLevel::ERROR))->toString());\
+//     msg += rocket::formatString(str, ##__VA_ARGS__); \
+//     (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+//     (rocket::Logger::getGlobalLogger())->log();
+// #define WARNLOG(str, ...) std::string msg = ((new rocket::LogEvent(rocket::LogLevel::WARN))->toString());\
+//     msg += rocket::formatString(str, ##__VA_ARGS__); \
+//     (rocket::Logger::getGlobalLogger())->pushLog(msg);\
+//     (rocket::Logger::getGlobalLogger())->log();
 
 
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hqh/Desktop/C++Proj/Rocket
+CMAKE_SOURCE_DIR = /home/hqh/Desktop/C++Proj/MYGit/Rocket
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hqh/Desktop/C++Proj/Rocket/build
+CMAKE_BINARY_DIR = /home/hqh/Desktop/C++Proj/MYGit/Rocket/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test_log.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/test_log.dir/flags.make
 
 CMakeFiles/test_log.dir/test/test_log.cc.o: CMakeFiles/test_log.dir/flags.make
 CMakeFiles/test_log.dir/test/test_log.cc.o: ../test/test_log.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqh/Desktop/C++Proj/Rocket/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_log.dir/test/test_log.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_log.dir/test/test_log.cc.o -c /home/hqh/Desktop/C++Proj/Rocket/test/test_log.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqh/Desktop/C++Proj/MYGit/Rocket/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_log.dir/test/test_log.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_log.dir/test/test_log.cc.o -c /home/hqh/Desktop/C++Proj/MYGit/Rocket/test/test_log.cc
 
 CMakeFiles/test_log.dir/test/test_log.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_log.dir/test/test_log.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqh/Desktop/C++Proj/Rocket/test/test_log.cc > CMakeFiles/test_log.dir/test/test_log.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqh/Desktop/C++Proj/MYGit/Rocket/test/test_log.cc > CMakeFiles/test_log.dir/test/test_log.cc.i
 
 CMakeFiles/test_log.dir/test/test_log.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_log.dir/test/test_log.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqh/Desktop/C++Proj/Rocket/test/test_log.cc -o CMakeFiles/test_log.dir/test/test_log.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqh/Desktop/C++Proj/MYGit/Rocket/test/test_log.cc -o CMakeFiles/test_log.dir/test/test_log.cc.s
 
 CMakeFiles/test_log.dir/test/test_log.cc.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/test_log.dir/test/test_log.cc.o.provides.build: CMakeFiles/test_log.d
 
 CMakeFiles/test_log.dir/rocket/common/log.cc.o: CMakeFiles/test_log.dir/flags.make
 CMakeFiles/test_log.dir/rocket/common/log.cc.o: ../rocket/common/log.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqh/Desktop/C++Proj/Rocket/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_log.dir/rocket/common/log.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_log.dir/rocket/common/log.cc.o -c /home/hqh/Desktop/C++Proj/Rocket/rocket/common/log.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hqh/Desktop/C++Proj/MYGit/Rocket/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_log.dir/rocket/common/log.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test_log.dir/rocket/common/log.cc.o -c /home/hqh/Desktop/C++Proj/MYGit/Rocket/rocket/common/log.cc
 
 CMakeFiles/test_log.dir/rocket/common/log.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_log.dir/rocket/common/log.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqh/Desktop/C++Proj/Rocket/rocket/common/log.cc > CMakeFiles/test_log.dir/rocket/common/log.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hqh/Desktop/C++Proj/MYGit/Rocket/rocket/common/log.cc > CMakeFiles/test_log.dir/rocket/common/log.cc.i
 
 CMakeFiles/test_log.dir/rocket/common/log.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_log.dir/rocket/common/log.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqh/Desktop/C++Proj/Rocket/rocket/common/log.cc -o CMakeFiles/test_log.dir/rocket/common/log.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hqh/Desktop/C++Proj/MYGit/Rocket/rocket/common/log.cc -o CMakeFiles/test_log.dir/rocket/common/log.cc.s
 
 CMakeFiles/test_log.dir/rocket/common/log.cc.o.requires:
 
@@ -117,7 +117,7 @@ test_log: CMakeFiles/test_log.dir/test/test_log.cc.o
 test_log: CMakeFiles/test_log.dir/rocket/common/log.cc.o
 test_log: CMakeFiles/test_log.dir/build.make
 test_log: CMakeFiles/test_log.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqh/Desktop/C++Proj/Rocket/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hqh/Desktop/C++Proj/MYGit/Rocket/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable test_log"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_log.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/test_log.dir/clean:
 .PHONY : CMakeFiles/test_log.dir/clean
 
 CMakeFiles/test_log.dir/depend:
-	cd /home/hqh/Desktop/C++Proj/Rocket/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hqh/Desktop/C++Proj/Rocket /home/hqh/Desktop/C++Proj/Rocket /home/hqh/Desktop/C++Proj/Rocket/build /home/hqh/Desktop/C++Proj/Rocket/build /home/hqh/Desktop/C++Proj/Rocket/build/CMakeFiles/test_log.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hqh/Desktop/C++Proj/MYGit/Rocket/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hqh/Desktop/C++Proj/MYGit/Rocket /home/hqh/Desktop/C++Proj/MYGit/Rocket /home/hqh/Desktop/C++Proj/MYGit/Rocket/build /home/hqh/Desktop/C++Proj/MYGit/Rocket/build /home/hqh/Desktop/C++Proj/MYGit/Rocket/build/CMakeFiles/test_log.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test_log.dir/depend
 

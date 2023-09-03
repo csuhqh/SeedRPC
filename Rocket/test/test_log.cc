@@ -13,6 +13,7 @@ int main(){
     pthread_create(&thread, nullptr, fun, nullptr);
 
     DEBUGLOG("i am main %s", "hqh ");
+    DEBUGLOG("i am main two ");
     pthread_join(thread, nullptr);
     return 0;
 }

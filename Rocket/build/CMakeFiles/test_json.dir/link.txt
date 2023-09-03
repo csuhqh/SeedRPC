@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/test_json.dir/test/test_config.cc.o  -o test_json  -L/home/hqh/Desktop/C++Proj/Rocket/mylibs/jsoncpp-1.9.2/build/src/lib_json -Wl,-rpath,/home/hqh/Desktop/C++Proj/Rocket/mylibs/jsoncpp-1.9.2/build/src/lib_json -ljsoncpp 
+/usr/bin/c++    -rdynamic CMakeFiles/test_json.dir/test/test_config.cc.o  -o test_json  -L/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/jsoncpp-1.9.2/build/src/lib_json -Wl,-rpath,/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/jsoncpp-1.9.2/build/src/lib_json -ljsoncpp 
