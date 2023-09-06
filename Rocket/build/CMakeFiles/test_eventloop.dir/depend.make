@@ -20,6 +20,7 @@ CMakeFiles/test_eventloop.dir/rocket/net/eventloop.cc.o: ../rocket/common/mutex.
 CMakeFiles/test_eventloop.dir/rocket/net/eventloop.cc.o: ../rocket/net/eventloop.cc
 
 CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.o: ../rocket/common/log.h
+CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.o: ../rocket/common/mutex.h
 CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.o: ../rocket/net/fd_event.h
 CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.o: ../rocket/common/mutex.h
 CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.o: ../rocket/net/fd_event.cc
@@ -57,6 +58,7 @@ CMakeFiles/test_eventloop.dir/rocket/net/io_thread_group.cc.o: ../rocket/common/
 CMakeFiles/test_eventloop.dir/rocket/net/io_thread_group.cc.o: ../rocket/net/io_thread_group.cc
 
 CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.o: ../rocket/common/log.h
+CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.o: ../rocket/common/mutex.h
 CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.o: ../rocket/net/fd_event.h
 CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.o: ../rocket/net/wakeup_fd_event.h
 CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.o: ../rocket/common/mutex.h
@@ -67,8 +69,6 @@ CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/common/mutex.h
 CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/common/util.h
 CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/eventloop.h
 CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/fd_event.h
-CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/io_thread.h
-CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/io_thread_group.h
 CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/timer_fd_event.h
 CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/timer_task.h
 CMakeFiles/test_eventloop.dir/test/test_eventloop.cc.o: ../rocket/net/wakeup_fd_event.h
