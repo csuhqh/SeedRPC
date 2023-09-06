@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_rpc_client
+
+# Build rule for target.
+test_rpc_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_rpc_client
+.PHONY : test_rpc_client
+
+# fast build rule for target.
+test_rpc_client/fast:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/build
+.PHONY : test_rpc_client/fast
+
+#=============================================================================
 # Target rules for targets named test_eventloop
 
 # Build rule for target.
@@ -175,17 +188,74 @@ test_tcp_connection/fast:
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/build
 .PHONY : test_tcp_connection/fast
 
+#=============================================================================
+# Target rules for targets named test_rpc_server
+
+# Build rule for target.
+test_rpc_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_rpc_server
+.PHONY : test_rpc_server
+
+# fast build rule for target.
+test_rpc_server/fast:
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/build
+.PHONY : test_rpc_server/fast
+
+rocket/client/tcp_client.o: rocket/client/tcp_client.cc.o
+
+.PHONY : rocket/client/tcp_client.o
+
+# target to build an object file
+rocket/client/tcp_client.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/client/tcp_client.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/client/tcp_client.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/client/tcp_client.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/client/tcp_client.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/client/tcp_client.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/client/tcp_client.cc.o
+.PHONY : rocket/client/tcp_client.cc.o
+
+rocket/client/tcp_client.i: rocket/client/tcp_client.cc.i
+
+.PHONY : rocket/client/tcp_client.i
+
+# target to preprocess a source file
+rocket/client/tcp_client.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/client/tcp_client.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/client/tcp_client.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/client/tcp_client.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/client/tcp_client.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/client/tcp_client.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/client/tcp_client.cc.i
+.PHONY : rocket/client/tcp_client.cc.i
+
+rocket/client/tcp_client.s: rocket/client/tcp_client.cc.s
+
+.PHONY : rocket/client/tcp_client.s
+
+# target to generate assembly for a file
+rocket/client/tcp_client.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/client/tcp_client.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/client/tcp_client.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/client/tcp_client.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/client/tcp_client.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/client/tcp_client.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/client/tcp_client.cc.s
+.PHONY : rocket/client/tcp_client.cc.s
+
 rocket/common/log.o: rocket/common/log.cc.o
 
 .PHONY : rocket/common/log.o
 
 # target to build an object file
 rocket/common/log.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/log.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/log.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/log.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/log.cc.o
 	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/rocket/common/log.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/log.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/log.cc.o
 .PHONY : rocket/common/log.cc.o
 
 rocket/common/log.i: rocket/common/log.cc.i
@@ -194,11 +264,13 @@ rocket/common/log.i: rocket/common/log.cc.i
 
 # target to preprocess a source file
 rocket/common/log.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/log.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/log.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/log.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/log.cc.i
 	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/rocket/common/log.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/log.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/log.cc.i
 .PHONY : rocket/common/log.cc.i
 
 rocket/common/log.s: rocket/common/log.cc.s
@@ -207,12 +279,98 @@ rocket/common/log.s: rocket/common/log.cc.s
 
 # target to generate assembly for a file
 rocket/common/log.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/log.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/log.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/log.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/log.cc.s
 	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/rocket/common/log.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/log.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/log.cc.s
 .PHONY : rocket/common/log.cc.s
+
+rocket/common/msg_id_util.o: rocket/common/msg_id_util.cc.o
+
+.PHONY : rocket/common/msg_id_util.o
+
+# target to build an object file
+rocket/common/msg_id_util.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/msg_id_util.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/msg_id_util.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/msg_id_util.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/msg_id_util.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/msg_id_util.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/msg_id_util.cc.o
+.PHONY : rocket/common/msg_id_util.cc.o
+
+rocket/common/msg_id_util.i: rocket/common/msg_id_util.cc.i
+
+.PHONY : rocket/common/msg_id_util.i
+
+# target to preprocess a source file
+rocket/common/msg_id_util.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/msg_id_util.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/msg_id_util.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/msg_id_util.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/msg_id_util.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/msg_id_util.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/msg_id_util.cc.i
+.PHONY : rocket/common/msg_id_util.cc.i
+
+rocket/common/msg_id_util.s: rocket/common/msg_id_util.cc.s
+
+.PHONY : rocket/common/msg_id_util.s
+
+# target to generate assembly for a file
+rocket/common/msg_id_util.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/msg_id_util.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/msg_id_util.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/msg_id_util.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/msg_id_util.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/msg_id_util.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/msg_id_util.cc.s
+.PHONY : rocket/common/msg_id_util.cc.s
+
+rocket/common/run_time.o: rocket/common/run_time.cc.o
+
+.PHONY : rocket/common/run_time.o
+
+# target to build an object file
+rocket/common/run_time.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/run_time.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/run_time.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/run_time.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/run_time.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/run_time.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/run_time.cc.o
+.PHONY : rocket/common/run_time.cc.o
+
+rocket/common/run_time.i: rocket/common/run_time.cc.i
+
+.PHONY : rocket/common/run_time.i
+
+# target to preprocess a source file
+rocket/common/run_time.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/run_time.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/run_time.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/run_time.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/run_time.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/run_time.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/run_time.cc.i
+.PHONY : rocket/common/run_time.cc.i
+
+rocket/common/run_time.s: rocket/common/run_time.cc.s
+
+.PHONY : rocket/common/run_time.s
+
+# target to generate assembly for a file
+rocket/common/run_time.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/run_time.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/run_time.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/run_time.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/run_time.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/run_time.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/run_time.cc.s
+.PHONY : rocket/common/run_time.cc.s
 
 rocket/common/util.o: rocket/common/util.cc.o
 
@@ -220,10 +378,12 @@ rocket/common/util.o: rocket/common/util.cc.o
 
 # target to build an object file
 rocket/common/util.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/util.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/util.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/util.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/util.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/util.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/util.cc.o
 .PHONY : rocket/common/util.cc.o
 
 rocket/common/util.i: rocket/common/util.cc.i
@@ -232,10 +392,12 @@ rocket/common/util.i: rocket/common/util.cc.i
 
 # target to preprocess a source file
 rocket/common/util.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/util.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/util.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/util.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/util.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/util.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/util.cc.i
 .PHONY : rocket/common/util.cc.i
 
 rocket/common/util.s: rocket/common/util.cc.s
@@ -244,10 +406,12 @@ rocket/common/util.s: rocket/common/util.cc.s
 
 # target to generate assembly for a file
 rocket/common/util.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/common/util.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/common/util.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/common/util.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/common/util.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/common/util.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/common/util.cc.s
 .PHONY : rocket/common/util.cc.s
 
 rocket/net/eventloop.o: rocket/net/eventloop.cc.o
@@ -256,10 +420,12 @@ rocket/net/eventloop.o: rocket/net/eventloop.cc.o
 
 # target to build an object file
 rocket/net/eventloop.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/eventloop.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/eventloop.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/eventloop.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/eventloop.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/eventloop.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/eventloop.cc.o
 .PHONY : rocket/net/eventloop.cc.o
 
 rocket/net/eventloop.i: rocket/net/eventloop.cc.i
@@ -268,10 +434,12 @@ rocket/net/eventloop.i: rocket/net/eventloop.cc.i
 
 # target to preprocess a source file
 rocket/net/eventloop.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/eventloop.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/eventloop.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/eventloop.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/eventloop.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/eventloop.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/eventloop.cc.i
 .PHONY : rocket/net/eventloop.cc.i
 
 rocket/net/eventloop.s: rocket/net/eventloop.cc.s
@@ -280,10 +448,12 @@ rocket/net/eventloop.s: rocket/net/eventloop.cc.s
 
 # target to generate assembly for a file
 rocket/net/eventloop.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/eventloop.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/eventloop.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/eventloop.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/eventloop.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/eventloop.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/eventloop.cc.s
 .PHONY : rocket/net/eventloop.cc.s
 
 rocket/net/fd_event.o: rocket/net/fd_event.cc.o
@@ -292,10 +462,12 @@ rocket/net/fd_event.o: rocket/net/fd_event.cc.o
 
 # target to build an object file
 rocket/net/fd_event.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/fd_event.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/fd_event.cc.o
 .PHONY : rocket/net/fd_event.cc.o
 
 rocket/net/fd_event.i: rocket/net/fd_event.cc.i
@@ -304,10 +476,12 @@ rocket/net/fd_event.i: rocket/net/fd_event.cc.i
 
 # target to preprocess a source file
 rocket/net/fd_event.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/fd_event.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/fd_event.cc.i
 .PHONY : rocket/net/fd_event.cc.i
 
 rocket/net/fd_event.s: rocket/net/fd_event.cc.s
@@ -316,10 +490,12 @@ rocket/net/fd_event.s: rocket/net/fd_event.cc.s
 
 # target to generate assembly for a file
 rocket/net/fd_event.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/fd_event.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/fd_event.cc.s
 .PHONY : rocket/net/fd_event.cc.s
 
 rocket/net/fd_event_group.o: rocket/net/fd_event_group.cc.o
@@ -328,10 +504,12 @@ rocket/net/fd_event_group.o: rocket/net/fd_event_group.cc.o
 
 # target to build an object file
 rocket/net/fd_event_group.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/fd_event_group.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/fd_event_group.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/fd_event_group.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/fd_event_group.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/fd_event_group.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/fd_event_group.cc.o
 .PHONY : rocket/net/fd_event_group.cc.o
 
 rocket/net/fd_event_group.i: rocket/net/fd_event_group.cc.i
@@ -340,10 +518,12 @@ rocket/net/fd_event_group.i: rocket/net/fd_event_group.cc.i
 
 # target to preprocess a source file
 rocket/net/fd_event_group.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/fd_event_group.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/fd_event_group.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/fd_event_group.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/fd_event_group.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/fd_event_group.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/fd_event_group.cc.i
 .PHONY : rocket/net/fd_event_group.cc.i
 
 rocket/net/fd_event_group.s: rocket/net/fd_event_group.cc.s
@@ -352,10 +532,12 @@ rocket/net/fd_event_group.s: rocket/net/fd_event_group.cc.s
 
 # target to generate assembly for a file
 rocket/net/fd_event_group.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/fd_event_group.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/fd_event_group.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/fd_event_group.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/fd_event_group.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/fd_event_group.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/fd_event_group.cc.s
 .PHONY : rocket/net/fd_event_group.cc.s
 
 rocket/net/io_thread.o: rocket/net/io_thread.cc.o
@@ -364,10 +546,12 @@ rocket/net/io_thread.o: rocket/net/io_thread.cc.o
 
 # target to build an object file
 rocket/net/io_thread.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/io_thread.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/io_thread.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/io_thread.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/io_thread.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/io_thread.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/io_thread.cc.o
 .PHONY : rocket/net/io_thread.cc.o
 
 rocket/net/io_thread.i: rocket/net/io_thread.cc.i
@@ -376,10 +560,12 @@ rocket/net/io_thread.i: rocket/net/io_thread.cc.i
 
 # target to preprocess a source file
 rocket/net/io_thread.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/io_thread.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/io_thread.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/io_thread.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/io_thread.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/io_thread.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/io_thread.cc.i
 .PHONY : rocket/net/io_thread.cc.i
 
 rocket/net/io_thread.s: rocket/net/io_thread.cc.s
@@ -388,10 +574,12 @@ rocket/net/io_thread.s: rocket/net/io_thread.cc.s
 
 # target to generate assembly for a file
 rocket/net/io_thread.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/io_thread.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/io_thread.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/io_thread.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/io_thread.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/io_thread.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/io_thread.cc.s
 .PHONY : rocket/net/io_thread.cc.s
 
 rocket/net/io_thread_group.o: rocket/net/io_thread_group.cc.o
@@ -400,10 +588,12 @@ rocket/net/io_thread_group.o: rocket/net/io_thread_group.cc.o
 
 # target to build an object file
 rocket/net/io_thread_group.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/io_thread_group.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/io_thread_group.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/io_thread_group.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/io_thread_group.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/io_thread_group.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/io_thread_group.cc.o
 .PHONY : rocket/net/io_thread_group.cc.o
 
 rocket/net/io_thread_group.i: rocket/net/io_thread_group.cc.i
@@ -412,10 +602,12 @@ rocket/net/io_thread_group.i: rocket/net/io_thread_group.cc.i
 
 # target to preprocess a source file
 rocket/net/io_thread_group.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/io_thread_group.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/io_thread_group.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/io_thread_group.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/io_thread_group.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/io_thread_group.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/io_thread_group.cc.i
 .PHONY : rocket/net/io_thread_group.cc.i
 
 rocket/net/io_thread_group.s: rocket/net/io_thread_group.cc.s
@@ -424,11 +616,265 @@ rocket/net/io_thread_group.s: rocket/net/io_thread_group.cc.s
 
 # target to generate assembly for a file
 rocket/net/io_thread_group.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/io_thread_group.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/io_thread_group.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/io_thread_group.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/io_thread_group.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/io_thread_group.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/io_thread_group.cc.s
 .PHONY : rocket/net/io_thread_group.cc.s
+
+rocket/net/rpc/coder/tinypb_coder.o: rocket/net/rpc/coder/tinypb_coder.cc.o
+
+.PHONY : rocket/net/rpc/coder/tinypb_coder.o
+
+# target to build an object file
+rocket/net/rpc/coder/tinypb_coder.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/coder/tinypb_coder.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/coder/tinypb_coder.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/coder/tinypb_coder.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/coder/tinypb_coder.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/coder/tinypb_coder.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/coder/tinypb_coder.cc.o
+.PHONY : rocket/net/rpc/coder/tinypb_coder.cc.o
+
+rocket/net/rpc/coder/tinypb_coder.i: rocket/net/rpc/coder/tinypb_coder.cc.i
+
+.PHONY : rocket/net/rpc/coder/tinypb_coder.i
+
+# target to preprocess a source file
+rocket/net/rpc/coder/tinypb_coder.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/coder/tinypb_coder.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/coder/tinypb_coder.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/coder/tinypb_coder.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/coder/tinypb_coder.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/coder/tinypb_coder.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/coder/tinypb_coder.cc.i
+.PHONY : rocket/net/rpc/coder/tinypb_coder.cc.i
+
+rocket/net/rpc/coder/tinypb_coder.s: rocket/net/rpc/coder/tinypb_coder.cc.s
+
+.PHONY : rocket/net/rpc/coder/tinypb_coder.s
+
+# target to generate assembly for a file
+rocket/net/rpc/coder/tinypb_coder.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/coder/tinypb_coder.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/coder/tinypb_coder.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/coder/tinypb_coder.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/coder/tinypb_coder.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/coder/tinypb_coder.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/coder/tinypb_coder.cc.s
+.PHONY : rocket/net/rpc/coder/tinypb_coder.cc.s
+
+rocket/net/rpc/coder/tinypb_protocol.o: rocket/net/rpc/coder/tinypb_protocol.cc.o
+
+.PHONY : rocket/net/rpc/coder/tinypb_protocol.o
+
+# target to build an object file
+rocket/net/rpc/coder/tinypb_protocol.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/coder/tinypb_protocol.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/coder/tinypb_protocol.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/coder/tinypb_protocol.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/coder/tinypb_protocol.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/coder/tinypb_protocol.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/coder/tinypb_protocol.cc.o
+.PHONY : rocket/net/rpc/coder/tinypb_protocol.cc.o
+
+rocket/net/rpc/coder/tinypb_protocol.i: rocket/net/rpc/coder/tinypb_protocol.cc.i
+
+.PHONY : rocket/net/rpc/coder/tinypb_protocol.i
+
+# target to preprocess a source file
+rocket/net/rpc/coder/tinypb_protocol.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/coder/tinypb_protocol.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/coder/tinypb_protocol.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/coder/tinypb_protocol.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/coder/tinypb_protocol.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/coder/tinypb_protocol.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/coder/tinypb_protocol.cc.i
+.PHONY : rocket/net/rpc/coder/tinypb_protocol.cc.i
+
+rocket/net/rpc/coder/tinypb_protocol.s: rocket/net/rpc/coder/tinypb_protocol.cc.s
+
+.PHONY : rocket/net/rpc/coder/tinypb_protocol.s
+
+# target to generate assembly for a file
+rocket/net/rpc/coder/tinypb_protocol.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/coder/tinypb_protocol.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/coder/tinypb_protocol.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/coder/tinypb_protocol.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/coder/tinypb_protocol.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/coder/tinypb_protocol.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/coder/tinypb_protocol.cc.s
+.PHONY : rocket/net/rpc/coder/tinypb_protocol.cc.s
+
+rocket/net/rpc/rpc_channel.o: rocket/net/rpc/rpc_channel.cc.o
+
+.PHONY : rocket/net/rpc/rpc_channel.o
+
+# target to build an object file
+rocket/net/rpc/rpc_channel.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_channel.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_channel.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_channel.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_channel.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_channel.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_channel.cc.o
+.PHONY : rocket/net/rpc/rpc_channel.cc.o
+
+rocket/net/rpc/rpc_channel.i: rocket/net/rpc/rpc_channel.cc.i
+
+.PHONY : rocket/net/rpc/rpc_channel.i
+
+# target to preprocess a source file
+rocket/net/rpc/rpc_channel.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_channel.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_channel.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_channel.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_channel.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_channel.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_channel.cc.i
+.PHONY : rocket/net/rpc/rpc_channel.cc.i
+
+rocket/net/rpc/rpc_channel.s: rocket/net/rpc/rpc_channel.cc.s
+
+.PHONY : rocket/net/rpc/rpc_channel.s
+
+# target to generate assembly for a file
+rocket/net/rpc/rpc_channel.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_channel.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_channel.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_channel.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_channel.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_channel.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_channel.cc.s
+.PHONY : rocket/net/rpc/rpc_channel.cc.s
+
+rocket/net/rpc/rpc_controller.o: rocket/net/rpc/rpc_controller.cc.o
+
+.PHONY : rocket/net/rpc/rpc_controller.o
+
+# target to build an object file
+rocket/net/rpc/rpc_controller.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_controller.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_controller.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_controller.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_controller.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_controller.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_controller.cc.o
+.PHONY : rocket/net/rpc/rpc_controller.cc.o
+
+rocket/net/rpc/rpc_controller.i: rocket/net/rpc/rpc_controller.cc.i
+
+.PHONY : rocket/net/rpc/rpc_controller.i
+
+# target to preprocess a source file
+rocket/net/rpc/rpc_controller.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_controller.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_controller.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_controller.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_controller.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_controller.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_controller.cc.i
+.PHONY : rocket/net/rpc/rpc_controller.cc.i
+
+rocket/net/rpc/rpc_controller.s: rocket/net/rpc/rpc_controller.cc.s
+
+.PHONY : rocket/net/rpc/rpc_controller.s
+
+# target to generate assembly for a file
+rocket/net/rpc/rpc_controller.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_controller.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_controller.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_controller.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_controller.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_controller.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_controller.cc.s
+.PHONY : rocket/net/rpc/rpc_controller.cc.s
+
+rocket/net/rpc/rpc_dispatcher.o: rocket/net/rpc/rpc_dispatcher.cc.o
+
+.PHONY : rocket/net/rpc/rpc_dispatcher.o
+
+# target to build an object file
+rocket/net/rpc/rpc_dispatcher.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_dispatcher.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_dispatcher.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_dispatcher.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_dispatcher.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_dispatcher.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_dispatcher.cc.o
+.PHONY : rocket/net/rpc/rpc_dispatcher.cc.o
+
+rocket/net/rpc/rpc_dispatcher.i: rocket/net/rpc/rpc_dispatcher.cc.i
+
+.PHONY : rocket/net/rpc/rpc_dispatcher.i
+
+# target to preprocess a source file
+rocket/net/rpc/rpc_dispatcher.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_dispatcher.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_dispatcher.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_dispatcher.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_dispatcher.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_dispatcher.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_dispatcher.cc.i
+.PHONY : rocket/net/rpc/rpc_dispatcher.cc.i
+
+rocket/net/rpc/rpc_dispatcher.s: rocket/net/rpc/rpc_dispatcher.cc.s
+
+.PHONY : rocket/net/rpc/rpc_dispatcher.s
+
+# target to generate assembly for a file
+rocket/net/rpc/rpc_dispatcher.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_dispatcher.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_dispatcher.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_dispatcher.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_dispatcher.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_dispatcher.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_dispatcher.cc.s
+.PHONY : rocket/net/rpc/rpc_dispatcher.cc.s
+
+rocket/net/rpc/rpc_interface.o: rocket/net/rpc/rpc_interface.cc.o
+
+.PHONY : rocket/net/rpc/rpc_interface.o
+
+# target to build an object file
+rocket/net/rpc/rpc_interface.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_interface.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_interface.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_interface.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_interface.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_interface.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_interface.cc.o
+.PHONY : rocket/net/rpc/rpc_interface.cc.o
+
+rocket/net/rpc/rpc_interface.i: rocket/net/rpc/rpc_interface.cc.i
+
+.PHONY : rocket/net/rpc/rpc_interface.i
+
+# target to preprocess a source file
+rocket/net/rpc/rpc_interface.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_interface.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_interface.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_interface.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_interface.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_interface.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_interface.cc.i
+.PHONY : rocket/net/rpc/rpc_interface.cc.i
+
+rocket/net/rpc/rpc_interface.s: rocket/net/rpc/rpc_interface.cc.s
+
+.PHONY : rocket/net/rpc/rpc_interface.s
+
+# target to generate assembly for a file
+rocket/net/rpc/rpc_interface.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/rpc/rpc_interface.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/rpc/rpc_interface.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/rpc/rpc_interface.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/rpc/rpc_interface.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/rpc/rpc_interface.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/rpc/rpc_interface.cc.s
+.PHONY : rocket/net/rpc/rpc_interface.cc.s
 
 rocket/net/tcp/tcp_acceptor.o: rocket/net/tcp/tcp_acceptor.cc.o
 
@@ -436,8 +882,12 @@ rocket/net/tcp/tcp_acceptor.o: rocket/net/tcp/tcp_acceptor.cc.o
 
 # target to build an object file
 rocket/net/tcp/tcp_acceptor.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_acceptor.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_acceptor.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_acceptor.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_acceptor.cc.o
 .PHONY : rocket/net/tcp/tcp_acceptor.cc.o
 
 rocket/net/tcp/tcp_acceptor.i: rocket/net/tcp/tcp_acceptor.cc.i
@@ -446,8 +896,12 @@ rocket/net/tcp/tcp_acceptor.i: rocket/net/tcp/tcp_acceptor.cc.i
 
 # target to preprocess a source file
 rocket/net/tcp/tcp_acceptor.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_acceptor.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_acceptor.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_acceptor.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_acceptor.cc.i
 .PHONY : rocket/net/tcp/tcp_acceptor.cc.i
 
 rocket/net/tcp/tcp_acceptor.s: rocket/net/tcp/tcp_acceptor.cc.s
@@ -456,8 +910,12 @@ rocket/net/tcp/tcp_acceptor.s: rocket/net/tcp/tcp_acceptor.cc.s
 
 # target to generate assembly for a file
 rocket/net/tcp/tcp_acceptor.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_acceptor.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_acceptor.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_acceptor.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_acceptor.cc.s
 .PHONY : rocket/net/tcp/tcp_acceptor.cc.s
 
 rocket/net/tcp/tcp_buffer.o: rocket/net/tcp/tcp_buffer.cc.o
@@ -466,8 +924,12 @@ rocket/net/tcp/tcp_buffer.o: rocket/net/tcp/tcp_buffer.cc.o
 
 # target to build an object file
 rocket/net/tcp/tcp_buffer.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_buffer.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_buffer.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_buffer.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_buffer.cc.o
 .PHONY : rocket/net/tcp/tcp_buffer.cc.o
 
 rocket/net/tcp/tcp_buffer.i: rocket/net/tcp/tcp_buffer.cc.i
@@ -476,8 +938,12 @@ rocket/net/tcp/tcp_buffer.i: rocket/net/tcp/tcp_buffer.cc.i
 
 # target to preprocess a source file
 rocket/net/tcp/tcp_buffer.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_buffer.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_buffer.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_buffer.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_buffer.cc.i
 .PHONY : rocket/net/tcp/tcp_buffer.cc.i
 
 rocket/net/tcp/tcp_buffer.s: rocket/net/tcp/tcp_buffer.cc.s
@@ -486,8 +952,12 @@ rocket/net/tcp/tcp_buffer.s: rocket/net/tcp/tcp_buffer.cc.s
 
 # target to generate assembly for a file
 rocket/net/tcp/tcp_buffer.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_buffer.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_buffer.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_buffer.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_buffer.cc.s
 .PHONY : rocket/net/tcp/tcp_buffer.cc.s
 
 rocket/net/tcp/tcp_connection.o: rocket/net/tcp/tcp_connection.cc.o
@@ -496,8 +966,12 @@ rocket/net/tcp/tcp_connection.o: rocket/net/tcp/tcp_connection.cc.o
 
 # target to build an object file
 rocket/net/tcp/tcp_connection.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_connection.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_connection.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_connection.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_connection.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_connection.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_connection.cc.o
 .PHONY : rocket/net/tcp/tcp_connection.cc.o
 
 rocket/net/tcp/tcp_connection.i: rocket/net/tcp/tcp_connection.cc.i
@@ -506,8 +980,12 @@ rocket/net/tcp/tcp_connection.i: rocket/net/tcp/tcp_connection.cc.i
 
 # target to preprocess a source file
 rocket/net/tcp/tcp_connection.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_connection.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_connection.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_connection.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_connection.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_connection.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_connection.cc.i
 .PHONY : rocket/net/tcp/tcp_connection.cc.i
 
 rocket/net/tcp/tcp_connection.s: rocket/net/tcp/tcp_connection.cc.s
@@ -516,39 +994,13 @@ rocket/net/tcp/tcp_connection.s: rocket/net/tcp/tcp_connection.cc.s
 
 # target to generate assembly for a file
 rocket/net/tcp/tcp_connection.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/tcp/tcp_connection.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/tcp/tcp_connection.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/tcp/tcp_connection.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_connection.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_connection.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/tcp/tcp_connection.cc.s
 .PHONY : rocket/net/tcp/tcp_connection.cc.s
-
-rocket/net/tcp/tcp_server.o: rocket/net/tcp/tcp_server.cc.o
-
-.PHONY : rocket/net/tcp/tcp_server.o
-
-# target to build an object file
-rocket/net/tcp/tcp_server.cc.o:
-	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_server.cc.o
-	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_server.cc.o
-.PHONY : rocket/net/tcp/tcp_server.cc.o
-
-rocket/net/tcp/tcp_server.i: rocket/net/tcp/tcp_server.cc.i
-
-.PHONY : rocket/net/tcp/tcp_server.i
-
-# target to preprocess a source file
-rocket/net/tcp/tcp_server.cc.i:
-	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_server.cc.i
-	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_server.cc.i
-.PHONY : rocket/net/tcp/tcp_server.cc.i
-
-rocket/net/tcp/tcp_server.s: rocket/net/tcp/tcp_server.cc.s
-
-.PHONY : rocket/net/tcp/tcp_server.s
-
-# target to generate assembly for a file
-rocket/net/tcp/tcp_server.cc.s:
-	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/tcp/tcp_server.cc.s
-	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/tcp/tcp_server.cc.s
-.PHONY : rocket/net/tcp/tcp_server.cc.s
 
 rocket/net/wakeup_fd_event.o: rocket/net/wakeup_fd_event.cc.o
 
@@ -556,10 +1008,12 @@ rocket/net/wakeup_fd_event.o: rocket/net/wakeup_fd_event.cc.o
 
 # target to build an object file
 rocket/net/wakeup_fd_event.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/wakeup_fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/wakeup_fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/wakeup_fd_event.cc.o
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/wakeup_fd_event.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/wakeup_fd_event.cc.o
 .PHONY : rocket/net/wakeup_fd_event.cc.o
 
 rocket/net/wakeup_fd_event.i: rocket/net/wakeup_fd_event.cc.i
@@ -568,10 +1022,12 @@ rocket/net/wakeup_fd_event.i: rocket/net/wakeup_fd_event.cc.i
 
 # target to preprocess a source file
 rocket/net/wakeup_fd_event.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/wakeup_fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/wakeup_fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/wakeup_fd_event.cc.i
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/wakeup_fd_event.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/wakeup_fd_event.cc.i
 .PHONY : rocket/net/wakeup_fd_event.cc.i
 
 rocket/net/wakeup_fd_event.s: rocket/net/wakeup_fd_event.cc.s
@@ -580,11 +1036,97 @@ rocket/net/wakeup_fd_event.s: rocket/net/wakeup_fd_event.cc.s
 
 # target to generate assembly for a file
 rocket/net/wakeup_fd_event.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/net/wakeup_fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/net/wakeup_fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/net/wakeup_fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/net/wakeup_fd_event.cc.s
 	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/net/wakeup_fd_event.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/net/wakeup_fd_event.cc.s
 .PHONY : rocket/net/wakeup_fd_event.cc.s
+
+rocket/pbs/order.pb.o: rocket/pbs/order.pb.cc.o
+
+.PHONY : rocket/pbs/order.pb.o
+
+# target to build an object file
+rocket/pbs/order.pb.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/pbs/order.pb.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/pbs/order.pb.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/pbs/order.pb.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/pbs/order.pb.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/pbs/order.pb.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/pbs/order.pb.cc.o
+.PHONY : rocket/pbs/order.pb.cc.o
+
+rocket/pbs/order.pb.i: rocket/pbs/order.pb.cc.i
+
+.PHONY : rocket/pbs/order.pb.i
+
+# target to preprocess a source file
+rocket/pbs/order.pb.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/pbs/order.pb.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/pbs/order.pb.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/pbs/order.pb.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/pbs/order.pb.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/pbs/order.pb.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/pbs/order.pb.cc.i
+.PHONY : rocket/pbs/order.pb.cc.i
+
+rocket/pbs/order.pb.s: rocket/pbs/order.pb.cc.s
+
+.PHONY : rocket/pbs/order.pb.s
+
+# target to generate assembly for a file
+rocket/pbs/order.pb.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/pbs/order.pb.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/pbs/order.pb.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/pbs/order.pb.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/pbs/order.pb.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/pbs/order.pb.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/pbs/order.pb.cc.s
+.PHONY : rocket/pbs/order.pb.cc.s
+
+rocket/server/tcp_server.o: rocket/server/tcp_server.cc.o
+
+.PHONY : rocket/server/tcp_server.o
+
+# target to build an object file
+rocket/server/tcp_server.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/server/tcp_server.cc.o
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/server/tcp_server.cc.o
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/server/tcp_server.cc.o
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/server/tcp_server.cc.o
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/server/tcp_server.cc.o
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/server/tcp_server.cc.o
+.PHONY : rocket/server/tcp_server.cc.o
+
+rocket/server/tcp_server.i: rocket/server/tcp_server.cc.i
+
+.PHONY : rocket/server/tcp_server.i
+
+# target to preprocess a source file
+rocket/server/tcp_server.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/server/tcp_server.cc.i
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/server/tcp_server.cc.i
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/server/tcp_server.cc.i
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/server/tcp_server.cc.i
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/server/tcp_server.cc.i
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/server/tcp_server.cc.i
+.PHONY : rocket/server/tcp_server.cc.i
+
+rocket/server/tcp_server.s: rocket/server/tcp_server.cc.s
+
+.PHONY : rocket/server/tcp_server.s
+
+# target to generate assembly for a file
+rocket/server/tcp_server.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/rocket/server/tcp_server.cc.s
+	$(MAKE) -f CMakeFiles/test_eventloop.dir/build.make CMakeFiles/test_eventloop.dir/rocket/server/tcp_server.cc.s
+	$(MAKE) -f CMakeFiles/test_timer.dir/build.make CMakeFiles/test_timer.dir/rocket/server/tcp_server.cc.s
+	$(MAKE) -f CMakeFiles/test_thread_group.dir/build.make CMakeFiles/test_thread_group.dir/rocket/server/tcp_server.cc.s
+	$(MAKE) -f CMakeFiles/test_tcp_connection.dir/build.make CMakeFiles/test_tcp_connection.dir/rocket/server/tcp_server.cc.s
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/rocket/server/tcp_server.cc.s
+.PHONY : rocket/server/tcp_server.cc.s
 
 test/test_eventloop.o: test/test_eventloop.cc.o
 
@@ -639,6 +1181,60 @@ test/test_log.s: test/test_log.cc.s
 test/test_log.cc.s:
 	$(MAKE) -f CMakeFiles/test_log.dir/build.make CMakeFiles/test_log.dir/test/test_log.cc.s
 .PHONY : test/test_log.cc.s
+
+test/test_rpc_client.o: test/test_rpc_client.cc.o
+
+.PHONY : test/test_rpc_client.o
+
+# target to build an object file
+test/test_rpc_client.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/test/test_rpc_client.cc.o
+.PHONY : test/test_rpc_client.cc.o
+
+test/test_rpc_client.i: test/test_rpc_client.cc.i
+
+.PHONY : test/test_rpc_client.i
+
+# target to preprocess a source file
+test/test_rpc_client.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/test/test_rpc_client.cc.i
+.PHONY : test/test_rpc_client.cc.i
+
+test/test_rpc_client.s: test/test_rpc_client.cc.s
+
+.PHONY : test/test_rpc_client.s
+
+# target to generate assembly for a file
+test/test_rpc_client.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_client.dir/build.make CMakeFiles/test_rpc_client.dir/test/test_rpc_client.cc.s
+.PHONY : test/test_rpc_client.cc.s
+
+test/test_rpc_server.o: test/test_rpc_server.cc.o
+
+.PHONY : test/test_rpc_server.o
+
+# target to build an object file
+test/test_rpc_server.cc.o:
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/test/test_rpc_server.cc.o
+.PHONY : test/test_rpc_server.cc.o
+
+test/test_rpc_server.i: test/test_rpc_server.cc.i
+
+.PHONY : test/test_rpc_server.i
+
+# target to preprocess a source file
+test/test_rpc_server.cc.i:
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/test/test_rpc_server.cc.i
+.PHONY : test/test_rpc_server.cc.i
+
+test/test_rpc_server.s: test/test_rpc_server.cc.s
+
+.PHONY : test/test_rpc_server.s
+
+# target to generate assembly for a file
+test/test_rpc_server.cc.s:
+	$(MAKE) -f CMakeFiles/test_rpc_server.dir/build.make CMakeFiles/test_rpc_server.dir/test/test_rpc_server.cc.s
+.PHONY : test/test_rpc_server.cc.s
 
 test/test_tcp_connection.o: test/test_tcp_connection.cc.o
 
@@ -728,15 +1324,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_rpc_client"
 	@echo "... test_eventloop"
 	@echo "... test_timer"
-	@echo "... edit_cache"
 	@echo "... test_thread_group"
 	@echo "... test_log"
 	@echo "... test_tcp_connection"
+	@echo "... edit_cache"
+	@echo "... test_rpc_server"
+	@echo "... rocket/client/tcp_client.o"
+	@echo "... rocket/client/tcp_client.i"
+	@echo "... rocket/client/tcp_client.s"
 	@echo "... rocket/common/log.o"
 	@echo "... rocket/common/log.i"
 	@echo "... rocket/common/log.s"
+	@echo "... rocket/common/msg_id_util.o"
+	@echo "... rocket/common/msg_id_util.i"
+	@echo "... rocket/common/msg_id_util.s"
+	@echo "... rocket/common/run_time.o"
+	@echo "... rocket/common/run_time.i"
+	@echo "... rocket/common/run_time.s"
 	@echo "... rocket/common/util.o"
 	@echo "... rocket/common/util.i"
 	@echo "... rocket/common/util.s"
@@ -755,6 +1362,24 @@ help:
 	@echo "... rocket/net/io_thread_group.o"
 	@echo "... rocket/net/io_thread_group.i"
 	@echo "... rocket/net/io_thread_group.s"
+	@echo "... rocket/net/rpc/coder/tinypb_coder.o"
+	@echo "... rocket/net/rpc/coder/tinypb_coder.i"
+	@echo "... rocket/net/rpc/coder/tinypb_coder.s"
+	@echo "... rocket/net/rpc/coder/tinypb_protocol.o"
+	@echo "... rocket/net/rpc/coder/tinypb_protocol.i"
+	@echo "... rocket/net/rpc/coder/tinypb_protocol.s"
+	@echo "... rocket/net/rpc/rpc_channel.o"
+	@echo "... rocket/net/rpc/rpc_channel.i"
+	@echo "... rocket/net/rpc/rpc_channel.s"
+	@echo "... rocket/net/rpc/rpc_controller.o"
+	@echo "... rocket/net/rpc/rpc_controller.i"
+	@echo "... rocket/net/rpc/rpc_controller.s"
+	@echo "... rocket/net/rpc/rpc_dispatcher.o"
+	@echo "... rocket/net/rpc/rpc_dispatcher.i"
+	@echo "... rocket/net/rpc/rpc_dispatcher.s"
+	@echo "... rocket/net/rpc/rpc_interface.o"
+	@echo "... rocket/net/rpc/rpc_interface.i"
+	@echo "... rocket/net/rpc/rpc_interface.s"
 	@echo "... rocket/net/tcp/tcp_acceptor.o"
 	@echo "... rocket/net/tcp/tcp_acceptor.i"
 	@echo "... rocket/net/tcp/tcp_acceptor.s"
@@ -764,18 +1389,27 @@ help:
 	@echo "... rocket/net/tcp/tcp_connection.o"
 	@echo "... rocket/net/tcp/tcp_connection.i"
 	@echo "... rocket/net/tcp/tcp_connection.s"
-	@echo "... rocket/net/tcp/tcp_server.o"
-	@echo "... rocket/net/tcp/tcp_server.i"
-	@echo "... rocket/net/tcp/tcp_server.s"
 	@echo "... rocket/net/wakeup_fd_event.o"
 	@echo "... rocket/net/wakeup_fd_event.i"
 	@echo "... rocket/net/wakeup_fd_event.s"
+	@echo "... rocket/pbs/order.pb.o"
+	@echo "... rocket/pbs/order.pb.i"
+	@echo "... rocket/pbs/order.pb.s"
+	@echo "... rocket/server/tcp_server.o"
+	@echo "... rocket/server/tcp_server.i"
+	@echo "... rocket/server/tcp_server.s"
 	@echo "... test/test_eventloop.o"
 	@echo "... test/test_eventloop.i"
 	@echo "... test/test_eventloop.s"
 	@echo "... test/test_log.o"
 	@echo "... test/test_log.i"
 	@echo "... test/test_log.s"
+	@echo "... test/test_rpc_client.o"
+	@echo "... test/test_rpc_client.i"
+	@echo "... test/test_rpc_client.s"
+	@echo "... test/test_rpc_server.o"
+	@echo "... test/test_rpc_server.i"
+	@echo "... test/test_rpc_server.s"
 	@echo "... test/test_tcp_connection.o"
 	@echo "... test/test_tcp_connection.i"
 	@echo "... test/test_tcp_connection.s"

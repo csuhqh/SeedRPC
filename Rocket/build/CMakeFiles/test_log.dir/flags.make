@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/hqh/Desktop/C++Proj/MYGit/Rocket -I/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/jsoncpp-1.9.2/include 
+CXX_INCLUDES = -I/home/hqh/Desktop/C++Proj/MYGit/Rocket -I/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/jsoncpp-1.9.2/include -I/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/protobuf-3.16.3/src 
 

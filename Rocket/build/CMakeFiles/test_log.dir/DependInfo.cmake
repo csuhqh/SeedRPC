@@ -13,6 +13,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
   "../mylibs/jsoncpp-1.9.2/include"
+  "../mylibs/protobuf-3.16.3/src"
   )
 
 # Targets to which this target links.

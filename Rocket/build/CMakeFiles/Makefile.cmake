@@ -42,9 +42,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/test_rpc_client.dir/DependInfo.cmake"
   "CMakeFiles/test_eventloop.dir/DependInfo.cmake"
   "CMakeFiles/test_timer.dir/DependInfo.cmake"
   "CMakeFiles/test_thread_group.dir/DependInfo.cmake"
   "CMakeFiles/test_log.dir/DependInfo.cmake"
   "CMakeFiles/test_tcp_connection.dir/DependInfo.cmake"
+  "CMakeFiles/test_rpc_server.dir/DependInfo.cmake"
   )
