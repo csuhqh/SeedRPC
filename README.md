@@ -1,5 +1,8 @@
+# SeedRPC
+
+
 ## 整体说明
-所有代码在Ubuntu18上远程开发，主目录下每个文件夹都是一个单独的项目，都可以单独运行。
+这是由C++11开发的高性能RPC库，代码在Ubuntu18.04上远程开发, 依赖的库(jsoncpp, protobuf)也包含在其中。
 - build：项目构建目录。
 - mylibs: 项目依赖的库（已经编译），方便复现
 - test：用于测试项目的源码文件。命名text_xx.cc。
@@ -15,25 +18,29 @@ make  //编译
 
 ## 项目: Rocket 高并发RPC框架
 参考：
-https://github.com/Gooddbird/rocket
+https://github.com/Gooddbird/seedrpc
+
+## 项目组成
+将文件描述符 ==> 封装为Fd_event对象 ==> 并在epoll中进行注册。
+## 环境搭建
+开发环境：Vscode + 远程Ubuntu。
+依赖库(已安装): jsoncpp
+
+### 日志模块
 
 
-## 项目: 不同网络通信(BIO/NIO/EPOLL等)
-比较和实现不同的socket通信，阻塞IO/非阻塞IO/IO多路复用(epoll, select)
+### 配置模块
+读取JSON文件作为项目的配置模块
+### EventLoop模块
 
 
-## 项目: MyThreadPool
+#### 定时器:
+   Timer_fd_event: 使用timerfd，在epoll注册事件，回调OnTimer()方法。
+   Timer_Task: OnTimer()中回调所有符合时间的任务。
 
-1. 线程池是一个生产者消费者模型
-   -- 生产者放入Task时，需要通知消费者(condNotEmpty)
-   -- 消费者每次取出Task, 需要通知生产者(condNotFull)
-   -- 由于都是从任务队列中取，因此需要保证线程安全。
-2. 线程池中含有3个角色:
-   -- 任务队列: 存放任务，线程安全
-   -- workers: 多线程，从任务队列中去除任务进行执行 
-   -- manager: 用于控制workers的数量。
-3. 任何被多线程读写的变量，需要加锁。
-4. pthrad_create() 如何调用类内方法：传入this指针，通过this指针间接调用。
+1. 既然epoll_event.data.ptr区域只能存放void*原始指针，因此，所有fd_event需要用原始指针。
 
-参考：
-https://subingwen.cn/linux/threadpool/
+
+
+
+

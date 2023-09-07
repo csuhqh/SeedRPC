@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/protoc.dir/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/protobuf-3.16.3/src/google/protobuf/compiler/main.cc.o  -o protoc-3.16.3.0 -Wl,-rpath,:::::::::::::: libprotoc.a libprotobuf.a -lpthread 

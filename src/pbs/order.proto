@@ -1,0 +1,18 @@
+syntax = "proto3";
+option cc_generic_services = true; // 表示生成service服务类和rpc方法描述，默认是不生成的
+
+message makeOrderRequest {
+  int32 price = 1;
+  string goods = 2;
+}
+
+message makeOrderResponse {
+  int32 ret_code = 1;
+  string res_info = 2;
+  string order_id = 3;
+}
+
+//定义一个服务，有一个方法
+service Order {
+  rpc makeOrder(makeOrderRequest) returns (makeOrderResponse);
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgmock.a  CMakeFiles/gmock.dir/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/protobuf-3.16.3/third_party/googletest/googlemock/src/gmock-all.cc.o CMakeFiles/gmock.dir/home/hqh/Desktop/C++Proj/MYGit/Rocket/mylibs/protobuf-3.16.3/third_party/googletest/googletest/src/gtest-all.cc.o
+/usr/bin/ranlib libgmock.a
