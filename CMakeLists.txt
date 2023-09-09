@@ -14,28 +14,35 @@ link_directories(${PROJ_PATH}/mylibs/protobuf-3.16.3/cmake/build)
 
 
 set(ALL_SRCS "")
+
+#common and net and rector
 aux_source_directory(${PROJ_PATH}/src/common COMMON_SRCS)
 aux_source_directory(${PROJ_PATH}/src/net NET_SRCS)
-aux_source_directory(${PROJ_PATH}/src/net/tcp NET_TCP_SRCS)
-aux_source_directory(${PROJ_PATH}/src/net/rpc NET_RPC_SRCS)
-aux_source_directory(${PROJ_PATH}/src/net/rpc/coder NET_RPC_CODER_SRCS)
-list(APPEND ALL_SRCS ${COMMON_SRCS} ${NET_SRCS} ${NET_TCP_SRCS} ${NET_RPC_SRCS} ${NET_RPC_CODER_SRCS})
-aux_source_directory(${PROJ_PATH}/src/client CLIENT_SRCS)
-aux_source_directory(${PROJ_PATH}/src/server SERVER_SRCS)
-aux_source_directory(${PROJ_PATH}/src/pbs PROBU_SRCS)
-list(APPEND ALL_SRCS ${CLIENT_SRCS} ${SERVER_SRCS} ${PROBU_SRCS})
+aux_source_directory(${PROJ_PATH}/src/reactor RECTOR_SRCS)
+list(APPEND ALL_SRCS ${COMMON_SRCS} ${NET_SRCS} ${RECTOR_SRCS})
+# 协议
+aux_source_directory(${PROJ_PATH}/src/protocol PROTOCOL_SRCS)
+aux_source_directory(${PROJ_PATH}/src/protocol/coder PROTOCOL_CODER_SRCS)
+list(APPEND ALL_SRCS ${PROTOCOL_SRCS} ${PROTOCOL_CODER_SRCS})
+# # rpc
+aux_source_directory(${PROJ_PATH}/src/rpc RPC_SRCS)
+aux_source_directory(${PROJ_PATH}/src/rpc/pbs/order RPC_PBS_ORDER_SRCS)  #service
+aux_source_directory(${PROJ_PATH}/src/rpc/client CLIENT_SRCS)
+aux_source_directory(${PROJ_PATH}/src/rpc/server SERVER_SRCS)
+list(APPEND ALL_SRCS ${RPC_SRCS} ${RPC_PBS_ORDER_SRCS} ${CLIENT_SRCS} ${SERVER_SRCS})
 
 
 
 
-add_executable(test_log test/test_log.cc ${ALL_SRCS})
-add_executable(test_eventloop test/test_eventloop ${ALL_SRCS})
-add_executable(test_timer test/test_timer.cc ${ALL_SRCS})
-add_executable(test_thread_group test/test_thread_group.cc ${ALL_SRCS} )
-add_executable(test_tcp_connection test/test_tcp_connection.cc ${ALL_SRCS} )
-add_executable(test_rpc_server test/test_rpc_server.cc ${ALL_SRCS})
-add_executable(test_rpc_client test/test_rpc_client.cc ${ALL_SRCS})
 
+add_executable(test_log test/01_test_log.cc ${ALL_SRCS})
+add_executable(test_eventloop test/02_test_eventloop.cc ${ALL_SRCS})
+add_executable(test_timer test/03_test_timer.cc ${ALL_SRCS})
+add_executable(test_thread_group test/04_test_thread_group.cc ${ALL_SRCS} )
+add_executable(test_tcp_connection test/05_test_tcp_connection.cc ${ALL_SRCS} )
+add_executable(test_rpc_server test/06_test_rpc_server.cc ${ALL_SRCS})
+add_executable(test_tcp_client test/07_test_tcp_client.cc ${ALL_SRCS})
+add_executable(test_rpc_client test/08_test_rpc_client.cc ${ALL_SRCS})
 
 target_link_libraries(test_log pthread protobuf) #需要添加静态链接库 libpthread.a
 target_link_libraries(test_eventloop pthread protobuf)
@@ -43,4 +50,5 @@ target_link_libraries(test_timer pthread protobuf)
 target_link_libraries(test_thread_group pthread protobuf)
 target_link_libraries(test_tcp_connection pthread protobuf)
 target_link_libraries(test_rpc_server pthread protobuf)
+target_link_libraries(test_tcp_client pthread protobuf)
 target_link_libraries(test_rpc_client pthread protobuf)
